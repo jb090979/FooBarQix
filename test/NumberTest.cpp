@@ -18,7 +18,7 @@ TEST(NumberTest, test_isDivisibleWithoutRemainder_IsDivisibleByX_GetTrue)
 
    bool actual = testobject.isDivisibleWithoutRemainder(2);
 
-   bool expected = true;
+   bool expected = false;
    EXPECT_EQ(actual, expected);
 }
 
