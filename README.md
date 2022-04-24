@@ -1,14 +1,14 @@
 Purpose
 ============
 
-The purpose of this module is not only to solve FooBarQix kata.
-The purpose is to show how some prinicples and patterns 
-which are useful for unit testing. Additionally the code shows how deal with some 
-pitfalls that could occur while software development.
+The purpose of this module is not just to solve the FooBarQix kata. 
+The main purpose is to show some principles and patterns useful 
+for unit testing. In addition, the code shows how to avoid some 
+pitfalls that can arise in software development.
 
 Build Steps
 ============
-This is a fully working exapmle. If you want to try it out please 
+This is a fully working exapmle. If you want to try it out please execute:
 
     cd build
     cmake .. -DCMAKE_BUILD_TYPE=Debug -G "Unix Makefiles"
@@ -79,39 +79,45 @@ As you can see there are 2 operation modules that do all the work.
 <img src="doc/architectur.png"
      alt="Class Diagramm" />
      
-The module FooBarQix processes the FooBarQix rules and creates the requested string.  
+The module FooBarQix processes the FooBarQix rules and creates the requested string.
 The module number is a generic number representation class that act like a primitive type. It should provide 
 additonal information about the number, like divisibility and converting the number in a list of digits.
 
 Additionally the "+" operator was added.This is not needed for solving the FooBarQix kata but should demonstrate 
-operator and exception handling. A lot of developers forget to to test the operator and exeption handling.
+operator and exception handling. A lot of developers forget to test the operators and exeption handling.
 To keep this example simple, the rest of the operators have been omitted.
 
 The integration module takes both operation modules, 
 instantiate the objects and call compute() for the numbers given in the example.
 
-As you can see there is no dependency between FooBarQix and Number. Both modules depends on the abstract class INumber only. 
+As you can see there is no dependency between FooBarQix and Number. 
+Both modules depends on the abstract class INumber only. 
+Now we can test both operation modules separately.
      
 Testing
 ============
 
-There are 4 unit test:
+There are 4 tests:
 - [FooBarQixTest](test/FooBarQixTest.cpp)
   - Mockist approach of a unit test for class FooBarQix, using INumberMock
 - [FooBarQixTestClassic](test/FooBarQixTestClassic.cpp)
   - Classic approach of a unit test for Class FooBarQix, using Number
 - [NumberTest](test/NumberTest.cpp)
-  - Classic test without any dependencies
+  - Classic unit test without any dependencies
   - show how to test operator and exceptions
 - [MainTest](test/mainTest.cpp)
-  - This test should show how to get rid of main functions
+  - This is an software test to check for solving the kata correctly
+  - show how to get rid of main functions
+  - shows how to catch std:cout in case there is no other side effect to check for.
 
 
-FooBarQixTest and FooBarQixTestClassic uses the same names for the test routines. So it is easy to compare the different approaches.
+FooBarQixTest and FooBarQixTestClassic uses the same names for the test routines. 
+So it is easy to compare the different approaches.
 
 Explanations
 ============
-When doing unit testing developers often faced with some common pitfalls. This section describes some of these pitfalls and the code will show the corresponding code.
+When doing unit testing developers often faced with some common pitfalls. 
+This section describes some of these pitfalls and the code will show how to deal with it.
 
 ## How to write unit test for modules that contain a main routine? ##
 The main function itself is not testable. The unit test will use its own main function. 

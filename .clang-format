@@ -8,7 +8,7 @@ MaxEmptyLinesToKeep: '2'
 UseTab: Never
 
 
-Standard: Cpp14
+Standard: Cpp11
 
 AlignAfterOpenBracket: Align
 AlignConsecutiveAssignments: 'true'

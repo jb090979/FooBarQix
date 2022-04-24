@@ -19,7 +19,7 @@ class INumber
    public:
    /**
      @brief determine devision is without remainder
-     @param[int] divisor 1....UINT32_MAX
+     @param[in] divisor
      @return true if devision is without remainder, else false
              0 will return false.
     */

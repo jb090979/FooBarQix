@@ -14,11 +14,13 @@
 namespace number {
 
 /**
- * @brief The Number class represent integer data type uint32_t not as a primitive type but as an high level type like std::string or
- std::stream.
+  @brief The Number class represent integer data type uint32_t not as
+        a primitive type but as an high level type which provides
+        additonal information about the number and safe arithmetic operators.
 
-          For this unit test example this class is kept simple and implementation is very incomplete. You will miss a lot of necessary
- functions.
+
+        For this unit test example this class is kept simple and implementation
+        is very incomplete. You will miss a lot of necessary functions.
 
  */
 class Number : public interface::INumber
