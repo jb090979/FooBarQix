@@ -8,7 +8,7 @@ pitfalls that can arise in software development.
 
 Build Steps
 ============
-This is a fully working exapmle. If you want to try it out please execute:
+This is a fully working example. If you want to try it out please execute:
 
     cd build
     cmake .. -DCMAKE_BUILD_TYPE=Debug -G "Unix Makefiles"
